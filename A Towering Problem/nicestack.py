@@ -8,18 +8,30 @@ tower2h = int(boxes[7])
 boxes.remove(boxes[7])
 boxes.remove(boxes[6])
 tower1 = []
-
-testtower1h = 0
+tower2 = []
 for i in boxes:
 	for j in boxes:
 		for k in boxes:
-			print(i +':'+ j +':' + k)
-			if i+j+k == tower1h:
-				tower1[0] = i
-				tower1[1] = j
-				tower1.add(k)
-				#these arnt adding to the list
+			if i != j and i != k and j != k:
+				if int(i)+int(j)+int(k) == tower1h:			
+					tower1.append(int(i))
+					tower1.append(int(j))
+					tower1.append(int(k))
+					break
+		if tower1:
+			break
+	if tower1:
+		break
 
-print(tower1)
-output = data
+tower1.sort(reverse = True)
+boxes.remove(str(tower1[0]))
+boxes.remove(str(tower1[1]))
+boxes.remove(str(tower1[2]))
+tower2.append(int(boxes[0]))
+tower2.append(int(boxes[1]))
+tower2.append(int(boxes[2]))
+tower2.sort(reverse = True)
+
+
+output = str(tower1[0]) + ' ' + str(tower1[1]) + ' ' + str(tower1[2]) + ' ' + str(tower2[0]) + ' ' + str(tower2[1]) + ' ' + str(tower2[2])
 print(output)
