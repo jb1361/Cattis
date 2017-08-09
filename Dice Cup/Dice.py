@@ -3,7 +3,6 @@ data = input.split()
 d1 = int(data[0])
 d2 = int(data[1])
 
-
 combinations = d1 * d2
 history = []
 i = 1
@@ -14,8 +13,6 @@ while i <= d1:
 		history.append(i+j)
 		j+=1
 	i+=1
-	
-	
 	
 def contains(lst,num):
 	for i in lst:
