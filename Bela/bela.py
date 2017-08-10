@@ -6,10 +6,33 @@ inp = inp.split()
 hands = int(inp[0]) * 4
 domHand = inp[1]
 
-data = []
+card_data = []
 i = 0
+
+
 while i < hands:
 	temp = input()
-	data.append(temp)
+	card_data.append(temp)
 	i += 1
-print(data)
+
+	
+points = 0
+
+def calc_points(card, suit):
+	if suit == domHand:
+		tempp = 0
+		for i in dominant:
+			if i[0] == card:
+				return int(i[1])
+	else:
+		for i in notdominant:
+			if i[0] == card:
+				return int(i[1])
+
+
+
+
+for i in card_data:
+	points += calc_points(i[0],i[1])
+	
+print(points)
